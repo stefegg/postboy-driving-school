@@ -15,6 +15,11 @@ get 'courses/edit'
 get '/search' => 'courses#search'
 get '/results' => 'courses#results'
 
+get 'cohorts/new'
+get 'cohorts/edit'
+get 'show_cohort' => 'cohorts#show'
+get 'mycohorts' => 'cohorts#index'
+
 get '/login' => 'sessions#new'
 post '/login' => 'sessions#create'
 delete '/logout' => 'sessions#destroy'
@@ -24,7 +29,7 @@ delete '/logout' => 'sessions#destroy'
 
   get 'register' => 'instructors#new'
   get 'instructors/edit'
-  get 'instructors/show'
+  get 'profile' => 'instructors#show'
   get 'instructors/index'
 
   get 'sessions/new'
@@ -32,10 +37,7 @@ delete '/logout' => 'sessions#destroy'
   get 'students/edit'
   get 'students/show'
   get 'students/index'
-  get 'cohorts/new'
-  get 'cohorts/edit'
-  get 'cohorts/show'
-  get 'cohorts/index'
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

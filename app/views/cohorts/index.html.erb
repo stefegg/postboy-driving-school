@@ -1,2 +1,4 @@
-<h1>Cohorts#index</h1>
-<p>Find me in app/views/cohorts/index.html.erb</p>
+<h1>My Cohorts</h1>
+<% @cohorts.each do |com| %>
+<%= link_to "#{com.name}", course_cohort_path(com.course_id, com.id) %><br>
+<% end %>

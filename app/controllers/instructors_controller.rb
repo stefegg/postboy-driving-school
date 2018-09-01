@@ -20,7 +20,7 @@ class InstructorsController < ApplicationController
     end
 
     def show
-      @user = Instructor.find(params[:id])
+      @user = current_user
     end
 
     def index

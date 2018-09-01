@@ -12,7 +12,7 @@ class CohortsController < ApplicationController
     @cohort.course_id = @course.id
     if @cohort.save
 
-      redirect_to course_cohort_path(@cohort.course_id, @cohort)
+    redirect_to course_cohort_path(@cohort.course_id, @cohort)
     else
       render 'new'
     end
@@ -25,14 +25,15 @@ end
   end
 
   def index
+    @cohorts = Cohort.where(instructor: current_user.full_name)
   end
 
   private
   def cohort_params
-    params.require(:cohort).permit(:name, :description, :start_date, :end_date)
+    params.require(:cohort).permit(:name, :description, :start_date, :end_date, :instructor)
   end
 
   def find_cohort
-    @cohort = Department.find(params[:id])
+    @cohort = Cohort.find(params[:id])
   end
 end

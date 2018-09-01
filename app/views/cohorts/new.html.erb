@@ -9,7 +9,7 @@
 <label>End Date:</label>
 <%= f.date_select :end_date, required: true %><br>
 <p>
-<label>Instructor:</label><%= f.collection_select :instructor, @instructor, :id, :full_name, {include_blank: true} %><br>
+<label>Instructor:</label><%= f.collection_select :instructor, @instructor, :full_name, :full_name, {include_blank: true} %><br>
 
 <%= f.submit 'Create Cohort' %>
 </p>
