@@ -1,2 +1,13 @@
-<h1>Courses#show</h1>
-<p>Find me in app/views/courses/show.html.erb</p>
+<label>Course Name:</label><h1><%= @course.name %><br>
+<p><label>Description:</label><%= @course.description %></p><br>
+<p><label>Course Hours:</label><%= @course.hours %></p><br>
+<p><label>Course Reward:</label><%= @course.reward %></p><br>
+<hr>
+  <h3>Your Cohorts</h3>
+  <% @course.cohorts.each do |cohort| %>
+  <h5><%= link_to "#{cohort.name}", course_cohort_path(@course.id, cohort.id) %></h5>
+<!-- determine argument position by running rails routes -->
+  <% end %>
+  <hr>
+<%= link_to 'Create a Cohort', new_course_cohort_path(@course.id) %>
+<%= link_to 'Add a Student', new_course_student_path(@course.id) %>

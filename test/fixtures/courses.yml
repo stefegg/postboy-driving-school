@@ -5,9 +5,11 @@ one:
   description: MyText
   hours: 1
   reward: MyString
+  user_id: 1
 
 two:
   name: MyString
   description: MyText
   hours: 1
   reward: MyString
+  user_id: 1

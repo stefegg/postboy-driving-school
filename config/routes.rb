@@ -8,6 +8,12 @@ resources :courses do
   resources :students
 end
 
+get 'new_course' => 'courses#new'
+get 'mycourses' => 'courses#index'
+get 'courses/show'
+get 'courses/edit'
+get '/search' => 'courses#search'
+get '/results' => 'courses#results'
 
 get '/login' => 'sessions#new'
 post '/login' => 'sessions#create'
@@ -30,9 +36,6 @@ delete '/logout' => 'sessions#destroy'
   get 'cohorts/edit'
   get 'cohorts/show'
   get 'cohorts/index'
-  get 'courses/new'
-  get 'courses/edit'
-  get 'courses/show'
-  get 'courses/index'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

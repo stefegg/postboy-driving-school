@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_01_202537) do
+ActiveRecord::Schema.define(version: 2018_09_01_221404) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -36,8 +36,10 @@ ActiveRecord::Schema.define(version: 2018_09_01_202537) do
   create_table "cohorts", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.integer "dates"
+    t.date "start_date"
+    t.date "end_date"
     t.integer "course_id"
+    t.string "instructor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -47,6 +49,7 @@ ActiveRecord::Schema.define(version: 2018_09_01_202537) do
     t.text "description"
     t.integer "hours"
     t.string "reward"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -72,7 +75,7 @@ ActiveRecord::Schema.define(version: 2018_09_01_202537) do
     t.string "name"
     t.string "last_name"
     t.integer "age"
-    t.string "educaiton"
+    t.string "education"
     t.integer "cohort_id"
     t.integer "course_id"
     t.string "sid"

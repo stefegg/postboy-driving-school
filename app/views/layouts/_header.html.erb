@@ -5,7 +5,7 @@
 
   <% if logged_in? %>
 
-  <li><%= link_to "#{current_user.email}", '#' %></li>
+  <li><%= link_to "#{current_user.email}", mycourses_path %></li>
   <li><%= link_to 'Log out', logout_path, method: :delete %>
   <% else %>
   <li><%= link_to 'Log In', login_path %></li>
