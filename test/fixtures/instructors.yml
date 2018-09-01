@@ -6,7 +6,7 @@ one:
   email: MyString
   password_digest: MyString
   age: 1
-  salaray: 1
+  salary: 1
   education: MyString
   bio: MyText
   sid: MyString
@@ -18,7 +18,7 @@ two:
   email: MyString
   password_digest: MyString
   age: 1
-  salaray: 1
+  salary: 1
   education: MyString
   bio: MyText
   sid: MyString

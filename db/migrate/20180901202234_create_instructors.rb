@@ -6,11 +6,11 @@ class CreateInstructors < ActiveRecord::Migration[5.2]
       t.string :email
       t.string :password_digest
       t.integer :age
-      t.integer :salaray
+      t.integer :salary
       t.string :education
       t.text :bio
       t.string :sid
-      t.boolean :admin
+      t.boolean :admin, default: false
 
       t.timestamps
     end
