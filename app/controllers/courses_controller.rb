@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  before_action :find_course, only: [:show, :edit]
+  before_action :find_course, only: [:show, :edit, :update]
   def new
     @course = Course.new
 

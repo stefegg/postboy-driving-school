@@ -9,3 +9,4 @@ Studnets:<br>
 <% @cohort.students.each do |e| %>
 <%= e.full_name %><br>
 <% end %>
+<%= link_to "Edit #{@cohort.name}", edit_course_cohort_path%>
