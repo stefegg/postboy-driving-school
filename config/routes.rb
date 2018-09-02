@@ -24,7 +24,7 @@ get '/login' => 'sessions#new'
 post '/login' => 'sessions#create'
 delete '/logout' => 'sessions#destroy'
 
-  get 'pages/home'
+  get 'all_courses' => 'pages#course_book'
   get 'pages/about'
 
   get 'register' => 'instructors#new'

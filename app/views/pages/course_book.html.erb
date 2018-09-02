@@ -1,0 +1,20 @@
+<h1>Check out Postboy's Courses</h1>
+<% @courses.each do |c| %>
+<div>
+<label>Course Name: <%= c.name %></label<br>
+  <label>Course Description: <%= c.description %></label<br>
+    <label>Number of Hours: <%= c.hours %></label<br>
+      <label>Proficiency Awarded: <%= c.reward %></label<br>
+
+</div>
+<% end %>
+<h1>Upcoming Cohorts</h1>
+<% @cohorts.each do |d| %>
+<div>
+<label>Cohort Name: <%= d.name %></label<br>
+  <label>Cohort Description: <%= d.description %></label<br>
+    <label>Dates: <%= d.cohort_dates %></label<br>
+  <label>Instructor: <%= d.instructor %>
+
+</div>
+<% end %>
