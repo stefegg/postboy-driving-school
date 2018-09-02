@@ -1,6 +1,6 @@
 class CohortsController < ApplicationController
     before_action :find_cohort, only: [:show, :edit, :update]
-    before_action :find_course, only: [:edit, :update]
+    before_action :find_course, only: [:edit, :show, :update]
   def new
     @course = Course.find(params[:course_id])
     @cohort = Cohort.new

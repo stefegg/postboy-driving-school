@@ -6,7 +6,9 @@
 <hr>
 Instructor:<%= @cohort.instructor %>
 Studnets:<br>
-<% @cohort.students.each do |e| %>
-<%= e.full_name %><br>
-<% end %>
+<% @cohort.students.each do |student| %>
+<%= student.full_name %><br>
+<%= link_to "#{student.full_name}", course_student_path(@course.id, student.id) %></h5>
+
+<% end %><br>
 <%= link_to "Edit #{@cohort.name}", edit_course_cohort_path%>

@@ -1,2 +1,10 @@
-<h1>Students#edit</h1>
-<p>Find me in app/views/students/edit.html.erb</p>
+<h1> Edit Student </h1>
+<%= form_for([@course, @student]) do |es| %>
+<label>First Name </label><%= es.text_field :name %><br>
+<label>Last Name</label><%= es.text_field :last_name %><br>
+
+<label>Age</label><%= es.text_field :age, placeholder: 'Age'  %> <br>
+<label>Education: </label><%= es.select :education, [["Walking", "Walking"], ["Bike Riding", "Bike Riding"], ["Taking the Bus", "Taking the Bus"], ["Postboy Driver", "Postboy Driver"]], required: true %><br>
+<label>Cohort:</label><%= es.collection_select :cohort_id, @cohort, :id, :name, {include_blank: true} %><br>
+<%= es.submit 'Update Student' %></p>
+<% end %>

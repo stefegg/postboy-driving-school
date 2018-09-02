@@ -1,2 +1,9 @@
-<h1>Students#show</h1>
-<p>Find me in app/views/students/show.html.erb</p>
+<h1> <%= @student.name %></h1>
+<p>First Name: <%= @student.name %></p>
+<p>Last Name: <%= @student.last_name %></p>
+<p>Age: <%= @student.age %></p>
+
+<p>Education: <%= @student.education %></p>
+<p>Student ID: <%= @student.sid %></p>
+
+<%= link_to "Edit #{@student.name}", edit_course_student_path%>
