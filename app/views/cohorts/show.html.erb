@@ -11,4 +11,7 @@ Studnets:<br>
 <%= link_to "#{student.full_name}", course_student_path(@course.id, student.id) %></h5>
 
 <% end %><br>
+<% if is_admin? %>
 <%= link_to "Edit #{@cohort.name}", edit_course_cohort_path%>
+<% else %>
+<% end %>

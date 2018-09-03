@@ -1,3 +1,6 @@
+<% if !logged_in? %>
+<h1><%= render 'layouts/oops' %></h1>
+<% else %>
 <h1> <%= @student.name %></h1>
 <p>First Name: <%= @student.name %></p>
 <p>Last Name: <%= @student.last_name %></p>
@@ -5,5 +8,8 @@
 
 <p>Education: <%= @student.education %></p>
 <p>Student ID: <%= @student.sid %></p>
-
+<% end %>
+<% if is_admin? %>
 <%= link_to "Edit #{@student.name}", edit_course_student_path%>
+<% else %>
+<% end %>

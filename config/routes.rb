@@ -26,6 +26,7 @@ delete '/logout' => 'sessions#destroy'
 
   get 'all_courses' => 'pages#course_book'
   get 'pages/about'
+  get 'oops' => 'pages#oops'
 
   get 'register' => 'instructors#new'
   get 'instructors/edit'
