@@ -15,6 +15,15 @@ class CoursesController < ApplicationController
     end
   end
 
+  def update
+if @course.update(course_params)
+  redirect_to @course
+else
+  render 'edit'
+end
+end
+
+
   def edit
   end
 

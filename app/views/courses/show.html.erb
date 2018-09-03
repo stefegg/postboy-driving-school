@@ -2,6 +2,8 @@
 <p><label>Description:</label><%= @course.description %></p><br>
 <p><label>Course Hours:</label><%= @course.hours %></p><br>
 <p><label>Course Reward:</label><%= @course.reward %></p><br>
+<p><%= link_to "Edit #{@course.name}", edit_course_path(@course.id)%></p>
+
 <hr>
   <h3>Your Cohorts</h3>
   <% @course.cohorts.each do |cohort| %>
