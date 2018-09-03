@@ -1,7 +1,7 @@
 <h1>Check out Postboy's Courses</h1>
 <% @courses.each do |c| %>
 <div>
-<label>Course Name: <%= c.name %></label<br>
+<label>Course Name: <%= link_to "#{c.name}", c%></label<br>
   <label>Course Description: <%= c.description %></label<br>
     <label>Number of Hours: <%= c.hours %></label<br>
       <label>Proficiency Awarded: <%= c.reward %></label<br>

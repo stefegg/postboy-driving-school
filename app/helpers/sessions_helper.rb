@@ -17,6 +17,9 @@ module SessionsHelper
   def is_admin?
     @current_user && @current_user.admin?
   end
+  def is_annoying?
+    @current_user && @current_user.admin?
+  end
 
   def log_out
     session.delete(:user_id)

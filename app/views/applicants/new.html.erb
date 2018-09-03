@@ -1,0 +1,19 @@
+<h1> Apply to Postboy Driving School! </h1>
+<%= form_for([@course, @applicant]) do |a| %>
+<label>First Name </label><%= a.text_field :name, required: true %><br>
+<label>Last Name</label><%= a.text_field :last_name, required: true %><br>
+<label>Email</label><%= a.email_field :email, required: true %><br>
+<label>Street Address</label><%= a.text_field :address, required: true %><br>
+<label>City</label><%= a.text_field :city, required: true %> <label>State</label><%= a.text_field :state, required: true %><label>Zip Code</label><%= a.text_field :zip, required: true%><br>
+<label>Age</label><%= a.text_field :age, placeholder: 'Age'  %> <br>
+<%= a.label :photo, 'Upload a profile photo' %><br>
+<%= a.file_field :photo %><br>
+<label>Education: </label><%= a.select :education, [["Walking", "Walking"], ["Bike Riding", "Bike Riding"], ["Taking the Bus", "Taking the Bus"], ["Postboy Driver", "Postboy Driver"]], required: true %><br>
+<label>Cohort:</label><%= a.collection_select :cohort_id, @cohort, :id, :name, {include_blank: true} %><br>
+<label>Tell us a little about why you want to take this course:</label><%= a.text_area :about, required: true %>
+<%= fields_for @applicant.agree do |agree_fields| %>
+<label>I agree to receive emails from Postboy about the course and cohort which I am inquiring about in this form</label>
+: <%= agree_fields.check_box :agree %>
+<% end %>
+<%= a.submit 'Apply now!' %></p>
+<% end %>

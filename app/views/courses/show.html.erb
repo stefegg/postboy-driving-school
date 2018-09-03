@@ -2,14 +2,23 @@
 <p><label>Description:</label><%= @course.description %></p><br>
 <p><label>Course Hours:</label><%= @course.hours %></p><br>
 <p><label>Course Reward:</label><%= @course.reward %></p><br>
-<p><%= link_to "Edit #{@course.name}", edit_course_path(@course.id)%></p>
-
 <hr>
-  <h3>Your Cohorts</h3>
+  <h3>Course Cohorts</h3>
   <% @course.cohorts.each do |cohort| %>
+    <% if not_logged? %>
+    <h5><%="#{cohort.name}"%></h5>
+  <%else%>
   <h5><%= link_to "#{cohort.name}", course_cohort_path(@course.id, cohort.id) %></h5>
-<!-- determine argument position by running rails routes -->
+  <%end%>
+  <% end %><% if not_logged?%>
+  <%= link_to 'Apply to this Course!', new_course_applicant_path(@course.id) %>
+  <% else%>
+<% end %>
+<% if is_admin? %>
+  <p><%= link_to "Edit #{@course.name}", edit_course_path(@course.id)%></p>
+  <%= link_to 'Create a Cohort', new_course_cohort_path(@course.id) %>
+  <%= link_to 'Add a Student', new_course_student_path(@course.id) %>
+  <% else %>
   <% end %>
+  
   <hr>
-<%= link_to 'Create a Cohort', new_course_cohort_path(@course.id) %>
-<%= link_to 'Add a Student', new_course_student_path(@course.id) %>
