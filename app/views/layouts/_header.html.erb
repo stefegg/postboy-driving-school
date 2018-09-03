@@ -5,7 +5,7 @@
     <div><%= link_to 'Postboy Logo', root_path %></div>
     <div><%= link_to 'Check Out Our Courses!',  all_courses_path %></div>
     <div><h1>Postboy Driving School</h1></div>
-    <div><%= link_to 'About Us', root_path %></div>
+    <div><%= link_to 'About Us', about_path %></div>
     <div><%= link_to 'Apply for a Course Today!', '#' %></div>
 </nav>
 <% else %>
@@ -16,6 +16,7 @@
   <div><%= link_to "My Profile", profile_path %></div>
   <div><%= link_to 'Log out', logout_path, method: :delete %></div>
   <div><%= link_to "My Cohorts", mycohorts_path %></div>
+  <div><%= link_to "Student Search", search_path %></div>
   </nav>
   <% else %>
 

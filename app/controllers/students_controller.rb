@@ -37,6 +37,38 @@ class StudentsController < ApplicationController
     def index
     end
 
+    def search
+    end
+
+    def results
+  @results = params[:q]
+  search_words = params[:q].downcase.split(' ')
+  students_name = Student.pluck(:name)
+  students_last = Student.pluck(:last_name)
+  students = []
+  students << students_name
+  students << students_last
+  students.flatten!
+  matches = []
+  @final_results = []
+  search_words.each do |word|
+    students.each do |s|
+        matches << s if s.downcase.include?(word)
+      end
+
+  matches.each do |match|
+      x = Student.where(name: match)
+      x.each do |y|
+      @final_results << y
+    end
+    z = Student.where(last_name: match)
+    z.each do |y|
+      @final_results << y
+    end
+  end
+  @final_results
+end
+end
     private
 
     def student_params

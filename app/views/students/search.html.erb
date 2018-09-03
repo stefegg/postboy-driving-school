@@ -1,0 +1,6 @@
+<h1> Search Students by Full Name </h1>
+<%= form_tag('/results', method: 'get') do %>
+<%= text_field_tag(:q) %> &nbsp<br>
+<label>
+<%= submit_tag("Search") %>
+<% end %>

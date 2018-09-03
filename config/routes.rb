@@ -12,8 +12,7 @@ get 'new_course' => 'courses#new'
 get 'mycourses' => 'courses#index'
 get 'courses/show'
 get 'courses/edit'
-get '/search' => 'courses#search'
-get '/results' => 'courses#results'
+
 
 get 'cohorts/new'
 get 'cohorts/edit'
@@ -35,6 +34,9 @@ delete '/logout' => 'sessions#destroy'
   get 'profile' => 'instructors#profile'
 
   get 'sessions/new'
+
+  get '/search' => 'students#search'
+  get '/results' => 'students#results'
   get 'students/new'
   get 'students/edit'
   get 'students/show'
