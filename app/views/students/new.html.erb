@@ -4,8 +4,8 @@
 <label>Last Name</label><%= f.text_field :last_name %><br>
 
 <label>Age</label><%= f.text_field :age, placeholder: 'Age'  %> <br>
-<!-- <%= #f.label :photo, 'Upload a photo' %><br>
-<%= #f.file_field :photo %><br> -->
+<%= f.label :photo, 'Upload a photo' %><br>
+<%= f.file_field :photo %><br> 
 <label>Education: </label><%= f.select :education, [["Walking", "Walking"], ["Bike Riding", "Bike Riding"], ["Taking the Bus", "Taking the Bus"], ["Postboy Driver", "Postboy Driver"]], required: true %><br>
 <label>Cohort:</label><%= f.collection_select :cohort_id, @cohort, :id, :name, {include_blank: true} %><br>
 <%= f.submit 'Register Student' %></p>

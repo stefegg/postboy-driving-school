@@ -1,6 +1,6 @@
 class Student < ApplicationRecord
   belongs_to :cohort
-
+  has_one_attached :photo
   def full_name
     self.name + " " + self.last_name
   end

@@ -24,6 +24,7 @@ end
   end
 
   def index
+      @applicant = Applicant.all
   end
 
 private
