@@ -1,8 +1,12 @@
-<h1><%= @user.full_name %> </h1><br>
-<h3>School ID # <%= @user.sid %></h3>
-<%= @user.photo.attachment.nil? ? 'No photo' : image_tag(@user.photo, size: '100x100') %><br>
-<p>Email: <%= @user.email %></p>
-<p>Bio: <%= @user.bio %></p>
-<p>Age: <%= @user.age %></p>
-<p>Education: <%= @user.education %></p>
-<p>Salary: $<%= @user.salary %> /year</p>
+<h1><%= @instructor.full_name %> </h1><br>
+<h3>School ID # <%= @instructor.sid %></h3>
+<%= @instructor.photo.attachment.nil? ? 'No photo' : image_tag(@instructor.photo, size: '100x100') %><br>
+<p>Email: <%= @instructor.email %></p>
+<p>Bio: <%= @instructor.bio %></p>
+<p>Age: <%= @instructor.age %></p>
+<p>Education: <%= @instructor.education %></p>
+<p>Salary: $<%= @instructor.salary %> /year</p>
+<% if is_admin? %>
+<p><%= link_to "Edit #{@instructor.full_name}", edit_instructor_path(@instructor.id)%></p>
+<% else %>
+<% end %>

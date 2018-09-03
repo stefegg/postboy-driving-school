@@ -1,0 +1,8 @@
+<h1><%= @user.full_name %> </h1><br>
+<h3>School ID # <%= @user.sid %></h3>
+<%= @user.photo.attachment.nil? ? 'No photo' : image_tag(@user.photo, size: '100x100') %><br>
+<p>Email: <%= @user.email %></p>
+<p>Bio: <%= @user.bio %></p>
+<p>Age: <%= @user.age %></p>
+<p>Education: <%= @user.education %></p>
+<p>Salary: $<%= @user.salary %> /year</p>

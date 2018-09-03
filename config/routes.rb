@@ -29,8 +29,9 @@ delete '/logout' => 'sessions#destroy'
 
   get 'register' => 'instructors#new'
   get 'instructors/edit'
-  get 'profile' => 'instructors#show'
-  get 'instructors/index'
+  get 'show' => 'instructors#show'
+  get 'all_inst' => 'instructors#index'
+  get 'profile' => 'instructors#profile'
 
   get 'sessions/new'
   get 'students/new'

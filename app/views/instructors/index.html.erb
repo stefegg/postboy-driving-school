@@ -1,2 +1,4 @@
-<h1>Instructors#index</h1>
-<p>Find me in app/views/instructors/index.html.erb</p>
+<h1>All Instructors</h1>
+<% @instructor.each do |inst| %>
+<%= link_to "#{inst.full_name}", inst %><br>
+<% end %>

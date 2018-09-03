@@ -1,4 +1,6 @@
 class InstructorsController < ApplicationController
+  before_action :find_instructor, only: [:show, :edit, :update]
+
     def new
       @user = Instructor.new
     end
@@ -16,7 +18,21 @@ class InstructorsController < ApplicationController
       end
     end
 
+    def update
+  if @instructor.update(instructor_params)
+    p "article successfully updated"
+    redirect_to @instructor
+  else
+    render 'edit'
+  end
+end
+
+
     def edit
+    end
+
+    def profile
+      @user = current_user
     end
 
     def show
@@ -24,6 +40,7 @@ class InstructorsController < ApplicationController
     end
 
     def index
+      @instructor =Instructor.all
     end
 
     private
@@ -32,6 +49,8 @@ class InstructorsController < ApplicationController
       params.require(:instructor).permit(:name, :last_name, :email, :bio, :photo, :password, :password_confirmation, :age, :salary, :education, :sid)
     end
 
-
+    def find_instructor
+      @instructor = Instructor.find(params[:id])
+    end
 
   end

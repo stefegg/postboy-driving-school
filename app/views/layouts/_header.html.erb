@@ -15,7 +15,8 @@
 <% if is_admin? %>
   <div><%= link_to "All Courses", mycourses_path %></div>
   <div><%= link_to 'Register A new Instructor', register_path %></div>
-  <div><%= link_to 'Register A new Course', new_course_path %></div><% else %>
-
+  <div><%= link_to 'Register A new Course', new_course_path %></div>
+  <div><%= link_to "All Instructors", all_inst_path %></div>
+<% else %>
 <% end %>
 </nav>
