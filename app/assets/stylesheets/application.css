@@ -17,3 +17,34 @@
 html {
   margin: 0 0 0 0;
 }
+
+body {
+  height: 15vh;
+  /* background-color: blue; */
+}
+
+#admin-panel {
+  display:grid;
+  grid-template: 15vh / 1fr 1fr 1fr 1fr 1fr 1fr
+}
+
+#inst-panel {
+  display:grid;
+  grid-template: 15vh / 1fr 1fr 1fr
+}
+
+
+#pub-panel {
+  display: grid;
+  grid-template: 15vh / 1fr 1fr 1fr 1fr 1fr 1fr
+}
+
+#pub-foot {
+  display: grid;
+  grid-template: 15vh / 1fr 1fr 1fr 1fr 1fr
+}
+
+#log-foot {
+  display: grid;
+  grid-template: 15vh / 1fr 1fr 1fr 1fr 1fr 1fr
+}

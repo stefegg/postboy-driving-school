@@ -8,6 +8,12 @@ module SessionsHelper
   def logged_in?
     !current_user.nil?
   end
+  def not_logged?
+    current_user.nil?
+  end
+  def is_inst?
+    !current_user.nil? && !current_user.admin?
+  end
   def is_admin?
     @current_user && @current_user.admin?
   end

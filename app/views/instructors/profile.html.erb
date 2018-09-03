@@ -6,3 +6,7 @@
 <p>Age: <%= @user.age %></p>
 <p>Education: <%= @user.education %></p>
 <p>Salary: $<%= @user.salary %> /year</p>
+<% if is_inst? %>
+<p><%= link_to "Change Password for #{@user.full_name}", edit_instructor_path(@user.id)%></p>
+<% else %>
+<% end %>

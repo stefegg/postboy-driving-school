@@ -1,22 +1,35 @@
-<nav>
-  <div><%= link_to 'Home', root_path %></div>
+  <% if not_logged? %>
+<nav id='pub-panel' class='panel'>
 
 
+    <div><%= link_to 'Postboy Logo', root_path %></div>
+    <div><%= link_to 'Check Out Our Courses!',  all_courses_path %></div>
+    <div><h1>Postboy Driving School</h1></div>
+    <div><%= link_to 'About Us', root_path %></div>
+    <div><%= link_to 'Apply for a Course Today!', '#' %></div>
+</nav>
+<% else %>
 
-  <% if logged_in? %>
+<% end %>
+  <% if is_inst? %>
+  <nav id='inst-panel' class='panel'>
   <div><%= link_to "My Profile", profile_path %></div>
-  <div><%= link_to 'Log out', logout_path, method: :delete %>
+  <div><%= link_to 'Log out', logout_path, method: :delete %></div>
   <div><%= link_to "My Cohorts", mycohorts_path %></div>
+  </nav>
   <% else %>
-  <div><%= link_to 'Log In', login_path %></div>
+
   <% end %>
 
 
 <% if is_admin? %>
+<nav id='admin-panel' class='panel'>
+  <div><%= link_to 'Home', root_path %></div>
   <div><%= link_to "All Courses", mycourses_path %></div>
   <div><%= link_to 'Register A new Instructor', register_path %></div>
   <div><%= link_to 'Register A new Course', new_course_path %></div>
   <div><%= link_to "All Instructors", all_inst_path %></div>
+    <div><%= link_to 'Log out', logout_path, method: :delete %>
+  </nav>
 <% else %>
 <% end %>
-</nav>

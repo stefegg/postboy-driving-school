@@ -1,5 +1,6 @@
 class InstructorsController < ApplicationController
   before_action :find_instructor, only: [:show, :edit, :update]
+  before_action :find_user, only: [:show, :edit, :update, :profile]
 
     def new
       @user = Instructor.new
@@ -32,11 +33,11 @@ end
     end
 
     def profile
-      @user = current_user
+
     end
 
     def show
-      @user = current_user
+
     end
 
     def index
@@ -51,6 +52,10 @@ end
 
     def find_instructor
       @instructor = Instructor.find(params[:id])
+    end
+
+    def find_user
+        @user = current_user
     end
 
   end

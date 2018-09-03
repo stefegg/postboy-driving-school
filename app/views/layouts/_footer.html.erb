@@ -1,0 +1,22 @@
+  <% if not_logged? %>
+<footer id='pub-foot'>
+    <div><%= link_to 'Log In', login_path %></div>
+    <div> Terms & Policies </div>
+    <div> Postboy Driving School </div>
+    <div> Address </div>
+    <div>Social Media Icons </div>
+  </footer>
+  <% else %>
+
+  <% end %>
+
+  <% if is_admin? || is_inst? %>
+  <footer id="log-foot">
+  <div><%= link_to 'Postboy Logo', root_path %></div>
+  <div><%= link_to 'Check Out Our Courses!',  all_courses_path %></div>
+  <div>Postboy Driving School</div>
+  <div><%= link_to 'About Us', root_path %></div>
+  <div><%= link_to 'Apply for a Course Today!', '#' %></div>
+</footer>
+  <% else %>
+  <% end %>
