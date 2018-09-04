@@ -1,2 +1,12 @@
-<h1>Applicants#show</h1>
-<p>Find me in app/views/applicants/show.html.erb</p>
+<% if !admin? %>
+<h1><%= render 'layouts/oops' %></h1>
+<% else %>
+<h1> <%= @applicant.name %></h1>
+<p>First Name: <%= @applicant.name %></p>
+<p>Last Name: <%= @applicant.last_name %></p>
+<p>Age: <%= @applicant.age %></p>
+<p>Applicant Address: <%= @applicant.full_address %></p>
+
+<p>Education: <%= @applicant.education %></p>
+<p>Applicant ID: <%= @applicant.aid %></p>
+<% end %>
