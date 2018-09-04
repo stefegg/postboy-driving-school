@@ -8,7 +8,7 @@ end
 
 def full_address
   self.address + " " + self.city + " " + self.zip.to_s
-
+end
 def generate_aid
   self.aid = SecureRandom.hex(3).upcase
 end
