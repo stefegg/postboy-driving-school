@@ -9,11 +9,11 @@
 <%= a.label :photo, 'Upload a profile photo' %><br>
 <%= a.file_field :photo %><br>
 <label>Education: </label><%= a.select :education, [["Walking", "Walking"], ["Bike Riding", "Bike Riding"], ["Taking the Bus", "Taking the Bus"]], required: true %><br>
-<label>Cohort:</label><%= a.collection_select :cohort_id, @cohort, :id, :select_cohort, {include_blank: true} , required: true%><br>
+<label>Cohort:</label><%= a.collection_select :cohort_id, @course.cohorts, :id, :select_cohort, {include_blank: true} , required: true%><br>
 <label>Tell us a little about why you want to take this course:</label><br><%= a.text_area :about, required: true %><br>
-<%= fields_for @applicant.agree do |agree_fields| %>
+
 <label>I agree to receive emails from Postboy about the course and cohort which I am inquiring about in this form</label>:<br>
 <%= a.check_box :agree, required: true %>
-<% end %>
+
 <%= a.submit 'Apply now!' %></p>
 <% end %>

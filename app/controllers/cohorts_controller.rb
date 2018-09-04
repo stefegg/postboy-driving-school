@@ -9,14 +9,18 @@ class CohortsController < ApplicationController
 
   def create
     @course = Course.find(params[:course_id])
-
+    @instructor = Instructor.all
     @cohort = Cohort.new(cohort_params)
     @cohort.course_id = @course.id
     if @cohort.save
-
+      msg = "Cohort Creation Complete!!"
+      flash[:notice] = msg
     redirect_to course_cohort_path(@cohort.course_id, @cohort)
     else
+      errors = @cohort.errors.full_messages
+      flash.now[:error] = errors.flatten
       render 'new'
+
     end
 end
 

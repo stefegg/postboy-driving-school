@@ -1,16 +1,4 @@
-  <% if not_logged? %>
-<nav id='pub-panel' class='panel'>
 
-
-    <div><%= link_to 'Postboy Logo', root_path %></div>
-    <div><%= link_to 'Check Out Our Courses!',  all_courses_path %></div>
-    <div><h1>Postboy Driving School</h1></div>
-    <div><%= link_to 'About Us', about_path %></div>
-    <div><%= link_to 'Apply for a Course Today!', all_courses_path %></div>
-</nav>
-<% else %>
-
-<% end %>
   <% if is_inst? %>
   <nav id='inst-panel' class='panel'>
   <div><%= link_to "My Profile", profile_path %></div>
@@ -31,8 +19,24 @@
   <div><%= link_to 'Register A new Course', new_course_path %></div>
   <div><%= link_to "All Instructors", all_inst_path %></div>
   <div><%= link_to "All Applicants", allapplicants_path %></div>
+  <div><%= link_to "All Students", allstudents_path %></div>
+
   <div><%= link_to "Student Search", search_path %></div>
     <div><%= link_to 'Log out', logout_path, method: :delete %>
   </nav>
 <% else %>
+<% end %>
+
+<% if not_logged? %>
+<nav id='pub-panel' class='panel'>
+
+
+  <div><%= link_to 'Postboy Logo', root_path %></div>
+  <div><%= link_to 'Check Out Our Courses!',  all_courses_path %></div>
+  <div><h1>Postboy Driving School</h1></div>
+  <div><%= link_to 'About Us', about_path %></div>
+  <div><%= link_to 'Apply for a Course Today!', all_courses_path %></div>
+</nav>
+<% else %>
+
 <% end %>

@@ -25,7 +25,7 @@ body {
 
 #admin-panel {
   display:grid;
-  grid-template: 15vh / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr
+  grid-template: 15vh / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr
 }
 
 #inst-panel {

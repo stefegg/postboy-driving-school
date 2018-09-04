@@ -10,11 +10,12 @@ class InstructorsController < ApplicationController
       @user = Instructor.new(instructor_params)
       @user.generate_sid
       if @user.save
-        msg = "Registration Complete!!"
+        msg = "Instructor Registration Complete!!"
         flash[:notice] = msg
-        log_in(@user)
         redirect_to @user
       else
+        errors = @cohort.errors.full_messages
+        flash.now[:error] = errors.flatten
         render 'new'
       end
     end

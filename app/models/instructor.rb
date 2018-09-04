@@ -1,4 +1,6 @@
 class Instructor < ApplicationRecord
+  validates :name, :last_name, :email, :password, :age, :salary, :education, presence: true
+  validates :age, numericality: { greater_than_or_equal_to: 15, less_than: 150 }
   before_save { self.email = email.downcase }
   has_one_attached :photo
   has_secure_password

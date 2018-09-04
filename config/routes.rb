@@ -45,7 +45,7 @@ delete '/logout' => 'sessions#destroy'
   get 'students/new'
   get 'students/edit'
   get 'students/show'
-  get 'students/index'
+  get 'allstudents' => 'students#index'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

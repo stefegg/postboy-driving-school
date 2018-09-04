@@ -4,7 +4,7 @@ class StudentsController < ApplicationController
   def new
       @student = Student.new
       @course = Course.find(params[:course_id])
-      @cohort = Cohort.where(course_id: @course.id)
+
     end
 
     def create
@@ -13,9 +13,15 @@ class StudentsController < ApplicationController
       @student.course_id = @course.id
       @student.generate_sid
       if @student.save
+        msg = "Student Registration Complete!!"
+        flash[:notice] = msg
         redirect_to course_path(@student.course_id)
       else
+        errors = @student.errors.full_messages
+        flash.now[:error] = errors.flatten
+
         render 'new'
+        # redirect_to new_course_student_path(@course.id)
       end
   end
 
@@ -31,28 +37,29 @@ class StudentsController < ApplicationController
     end
 
     def edit
-          @cohort = Cohort.all
+      @cohort = Cohort.all
     end
 
     def index
+      @student = Student.all
     end
 
     def search
     end
 
     def results
-  @results = params[:q]
-  search_words = params[:q].downcase.split(' ')
-  students_name = Student.pluck(:name)
-  students_last = Student.pluck(:last_name)
-  students = []
-  students << students_name
-  students << students_last
-  students.flatten!
-  matches = []
-  @final_results = []
-  search_words.each do |word|
-    students.each do |s|
+      @results = params[:q]
+      search_words = params[:q].downcase.split(' ')
+      students_name = Student.pluck(:name)
+      students_last = Student.pluck(:last_name)
+      students = []
+      students << students_name
+      students << students_last
+      students.flatten!
+      matches = []
+      @final_results = []
+      search_words.each do |word|
+        students.each do |s|
         matches << s if s.downcase.include?(word)
       end
 

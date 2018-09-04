@@ -9,8 +9,12 @@ class CoursesController < ApplicationController
     @course = Course.new(course_params)
     @course.user_id = current_user.id
     if @course.save
+      msg = "Course Creation Complete!!"
+      flash[:notice] = msg
       redirect_to @course
     else
+      errors = @course.errors.full_messages
+      flash.now[:error] = errors.flatten
       render 'new'
     end
   end

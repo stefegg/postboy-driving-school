@@ -1,6 +1,4 @@
-<% if !admin? %>
-<h1><%= render 'layouts/oops' %></h1>
-<% else %>
+<% if current_user.admin? %>
 <h1> <%= @applicant.name %></h1>
 <p>First Name: <%= @applicant.name %></p>
 <p>Last Name: <%= @applicant.last_name %></p>
@@ -9,4 +7,6 @@
 
 <p>Education: <%= @applicant.education %></p>
 <p>Applicant ID: <%= @applicant.aid %></p>
+<% else %>
+<h1><%= render 'layouts/oops' %></h1>
 <% end %>

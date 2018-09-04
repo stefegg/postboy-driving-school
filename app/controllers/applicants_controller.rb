@@ -4,7 +4,6 @@ class ApplicantsController < ApplicationController
   def new
     @applicant = Applicant.new
     @course = Course.find(params[:course_id])
-    @cohort = Cohort.where(course_id: @course.id)
   end
   def create
     @applicant = Applicant.new(applicant_params)
@@ -12,8 +11,12 @@ class ApplicantsController < ApplicationController
     @applicant.course_id = @course.id
     @applicant.generate_aid
     if @applicant.save
+      msg = "Application Complete!! Someone from our staff will contact you within the next 24-48 Hours!"
+      flash[:notice] = msg
       redirect_to course_path(@applicant.course_id)
     else
+      errors = @applicant.errors.full_messages
+      flash.now[:error] = errors.flatten
       render 'new'
     end
 end
