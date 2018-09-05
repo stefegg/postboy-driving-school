@@ -11,7 +11,7 @@
   <h5><%= link_to "#{cohort.name}", course_cohort_path(@course.id, cohort.id) %></h5>
   <%end%>
   <% end %><% if not_logged?%>
-  <%= link_to 'Apply to this Course!', new_course_applicant_path(@course.id) %>
+  <%= link_to 'Apply to this Course!', new_course_student_path(@course.id) %>
   <% else%>
 <% end %>
 <% if is_admin? %>

@@ -32,8 +32,12 @@ class StudentsController < ApplicationController
       render 'edit'
     end
   end
+    def all
+      @student = Student.where(accepted: false)
+    end
 
     def show
+
     end
 
     def edit
@@ -41,7 +45,7 @@ class StudentsController < ApplicationController
     end
 
     def index
-      @student = Student.all
+      @student = Student.where(accepted: true)
     end
 
     def search
@@ -79,7 +83,7 @@ end
     private
 
     def student_params
-      params.require(:student).permit(:name, :last_name, :age, :education, :cohort_id)
+      params.require(:student).permit(:name, :last_name, :email, :address, :city, :state, :zip, :about, :agree, :age, :education, :accepted, :reviewed, :rewards, :cohort_id)
     end
 
     def find_course

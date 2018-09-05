@@ -14,7 +14,7 @@ class InstructorsController < ApplicationController
         flash[:notice] = msg
         redirect_to @user
       else
-        errors = @cohort.errors.full_messages
+        errors = @instructor.errors.full_messages
         flash.now[:error] = errors.flatten
         render 'new'
       end

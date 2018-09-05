@@ -28,6 +28,7 @@ end
 
   def index
       @applicant = Applicant.all
+      @student = Student.where(reviewed: false)
   end
 
 private

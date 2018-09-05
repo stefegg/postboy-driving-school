@@ -95,11 +95,21 @@ ActiveRecord::Schema.define(version: 2018_09_03_185843) do
   create_table "students", force: :cascade do |t|
     t.string "name"
     t.string "last_name"
+    t.string "email"
+    t.string "address"
+    t.string "city"
+    t.string "state"
+    t.integer "zip"
+    t.text "about"
+    t.boolean "agree"
     t.integer "age"
     t.string "education"
     t.integer "cohort_id"
     t.integer "course_id"
     t.string "sid"
+    t.boolean "reviewed", default: false
+    t.boolean "accepted", default: false
+    t.text "rewards"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["sid"], name: "index_students_on_sid", unique: true

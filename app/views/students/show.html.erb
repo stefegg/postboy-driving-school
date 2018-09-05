@@ -2,14 +2,20 @@
 <h1><%= render 'layouts/oops' %></h1>
 <% else %>
 <h1> <%= @student.name %></h1>
+<%= @student.photo.attachment.nil? ? 'No photo' : image_tag(@student.photo, size: '100x100') %><br>
 <p>First Name: <%= @student.name %></p>
 <p>Last Name: <%= @student.last_name %></p>
+<p>Address: <%= @student.full_address %></p>
 <p>Age: <%= @student.age %></p>
-
+<p>About: <%= @student.about %></p>
 <p>Education: <%= @student.education %></p>
 <p>Student ID: <%= @student.sid %></p>
 <% end %>
-<% if is_admin? %>
-<%= link_to "Edit #{@student.name}", edit_course_student_path%>
+<% if current_user.admin? && !@student.accepted? %>
+<%= link_to "Review Applicant #{@student.name}", edit_course_student_path%>
+<% else %>
+<% end %>
+<% if current_user.admin? && @student.accepted? %>
+<%= link_to "Edit Student #{@student.name}", edit_course_student_path%>
 <% else %>
 <% end %>

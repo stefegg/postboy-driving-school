@@ -1,12 +1,18 @@
-<h1> Register a new Student </h1>
+<h1> Apply to be a new Student </h1>
 <%= form_for([@course, @student]) do |f| %>
 <label>First Name </label><%= f.text_field :name %><br>
 <label>Last Name</label><%= f.text_field :last_name %><br>
-
+<label>Email</label><%= f.email_field :email, required: true %><br>
+<label>Street Address</label><%= f.text_field :address, required: true %><br>
+<label>City</label><%= f.text_field :city, required: true %> <label>State</label><%= f.text_field :state, required: true %><label>Zip Code</label><%= f.text_field :zip, required: true%><br>
 <label>Age</label><%= f.text_field :age, placeholder: 'Age'  %> <br>
 <%= f.label :photo, 'Upload a photo' %><br>
 <%= f.file_field :photo %><br>
 <label>Education: </label><%= f.select :education, [["Walking", "Walking"], ["Bike Riding", "Bike Riding"], ["Taking the Bus", "Taking the Bus"], ["Postboy Driver", "Postboy Driver"]], required: true %><br>
 <label>Cohort:</label><%= f.collection_select :cohort_id, @course.cohorts, :id, :name, {include_blank: true} %><br>
-<%= f.submit 'Register Student' %></p>
+<label>Tell us a little about why you want to take this course:</label><br><%= f.text_area :about, required: true %><br>
+<label>I agree to receive emails from Postboy about the course and cohort which I am inquiring about in this form</label>:<br>
+<%= f.check_box :agree, required: true %>
+
+<%= f.submit 'Submit Application!' %></p>
 <% end %>

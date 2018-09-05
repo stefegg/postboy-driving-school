@@ -5,11 +5,13 @@
 <br>
 <hr>
 Instructor:<%= @cohort.instructor %>
-Studnets:<br>
+Students:<br>
 <% @cohort.students.each do |student| %>
+<% if student.accepted? %>
 <%= student.full_name %><br>
 <%= link_to "#{student.full_name}", course_student_path(@course.id, student.id) %></h5>
-
+<% else%>
+<%end%>
 <% end %><br>
 <% if is_admin? %>
 <%= link_to "Edit #{@cohort.name}", edit_course_cohort_path%>

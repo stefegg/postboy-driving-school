@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'applicants/new'
   get 'applicants/edit'
   get 'applicants/show'
-  get 'allapplicants' => 'applicants#index'
+  get 'allapplicants' => 'students#all'
 root 'pages#home'
 
 resources :instructors

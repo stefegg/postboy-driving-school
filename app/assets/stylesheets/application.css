@@ -14,6 +14,12 @@
  *= require_self
  */
 
+:root {
+  --ainge: rgb(255, 153, 0);
+  --namek: rgb(3, 205, 69);
+  --purps: rgb(111, 20, 204);
+}
+
 html {
   margin: 0 0 0 0;
 }
