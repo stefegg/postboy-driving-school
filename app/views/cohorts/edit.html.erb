@@ -1,3 +1,6 @@
+<% if current_user == nil %>
+<h1><%= render 'layouts/oops' %></h1>
+<% else %>
 <h1>Edit Cohort</h1>
 
 <%= form_for([@course, @cohort]) do |u| %>
@@ -13,4 +16,5 @@
 
 <%= u.submit 'Update Cohort' %>
 </p>
+<% end %>
 <% end %>

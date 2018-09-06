@@ -1,3 +1,6 @@
+<% if current_user == nil %>
+<h1><%= render 'layouts/oops' %></h1>
+<% else %>
 <h1><%= @user.full_name %> </h1><br>
 <h3>School ID # <%= @user.sid %></h3>
 <%= @user.photo.attachment.nil? ? 'No photo' : image_tag(@user.photo, size: '100x100') %><br>
@@ -9,4 +12,5 @@
 <% if is_inst? %>
 <p><%= link_to "Change Password for #{@user.full_name}", edit_instructor_path(@user.id)%></p>
 <% else %>
+<% end %>
 <% end %>

@@ -1,4 +1,8 @@
+<% if current_user == nil %>
+<h1><%= render 'layouts/oops' %></h1>
+<% else %>
 <h1>All Instructors</h1>
 <% @instructor.each do |inst| %>
 <%= link_to "#{inst.full_name}", inst %><br>
+<% end %>
 <% end %>

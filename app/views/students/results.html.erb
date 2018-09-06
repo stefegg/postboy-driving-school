@@ -1,9 +1,14 @@
+<% if current_user == nil %>
+<h1><%= render 'layouts/oops' %></h1>
+<% else %>
+
 <h1> Students matching "<%=@results%>"</h1>
 
 <% if @final_results != nil %>
 <% @final_results.each do |res| %>
 <hr>
 <%= link_to "#{res.name}""#{res.last_name}", course_student_path(res.course_id, res.id) %><br>
+<% end %>
 <% end %>
 <% end %>
 <hr>

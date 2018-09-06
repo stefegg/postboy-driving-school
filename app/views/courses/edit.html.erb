@@ -1,3 +1,7 @@
+<% if current_user == nil %>
+<h1><%= render 'layouts/oops' %></h1>
+<% else %>
+
 <h1>Edit <%= @course.name %></h1>
 
 <%= form_for(@course) do |f| %>
@@ -7,4 +11,5 @@
 <label>Course Reward: </label><%= f.select :reward, [["Safety Certificate", "Safety Certificate"], ["Bus Driver License", "Bus Driver Liecnse"], ["Automobile Driver's License", "Automobile Driver's License"]], required: true %><br>
 
 <%= f.submit 'Update Course' %><br>
+<% end %>
 <% end %>

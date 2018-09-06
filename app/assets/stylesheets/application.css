@@ -54,3 +54,12 @@ body {
   display: grid;
   grid-template: 15vh / 1fr 1fr 1fr 1fr 1fr 1fr
 }
+
+.foot {
+  text-align: center;
+  margin-top: 10vh;
+}
+
+.panel {
+  text-align: center;
+}

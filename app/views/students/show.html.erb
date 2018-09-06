@@ -11,11 +11,11 @@
 <p>Education: <%= @student.education %></p>
 <p>Student ID: <%= @student.sid %></p>
 <% end %>
-<% if current_user.admin? && !@student.accepted? %>
+<% if is_admin? && !@student.accepted? %>
 <%= link_to "Review Applicant #{@student.name}", edit_course_student_path%>
 <% else %>
 <% end %>
-<% if current_user.admin? && @student.accepted? %>
+<% if is_admin? && @student.accepted? %>
 <%= link_to "Edit Student #{@student.name}", edit_course_student_path%>
 <% else %>
 <% end %>

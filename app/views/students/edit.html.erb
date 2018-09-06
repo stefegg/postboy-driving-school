@@ -1,3 +1,7 @@
+<% if current_user == nil %>
+<h1><%= render 'layouts/oops' %></h1>
+<% else %>
+<% end %>
 <% if logged_in? && @student.accepted? %>
 <h1> Edit Student </h1>
 <%= form_for([@course, @student]) do |es| %>
@@ -16,7 +20,7 @@
 <% end %>
 <% else %>
 <% end %>
-<% if current_user.admin? && !@student.accepted? %>
+<% if is_admin? && !@student.accepted? %>
 <h1> Review Student for Approval </h1>
 <p>First Name: <%= @student.name %></p>
 <p>Last Name: <%= @student.last_name %></p>
@@ -27,8 +31,8 @@
 <p>Applicant ID: <%= @student.sid %></p>
 <p>Accept this Student?<p>
   <%= form_for([@course, @student]) do |d| %>
-  <%= d.check_box :accepted, required: true %>
-  <%= d.submit 'Accept Student' %></p>
+  <%= d.check_box :accepted %>
+  <%= d.submit 'Accept Student', data:{confirm:'Are you sure?'} %></p>
 <% end%>
 <% else %>
 <% end %>
