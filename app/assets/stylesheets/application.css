@@ -18,48 +18,103 @@
   --ainge: rgb(255, 153, 0);
   --namek: rgb(3, 205, 69);
   --purps: rgb(111, 20, 204);
+  --sg: rgb(120, 115, 115);
+  --mg: rgb(96, 92, 92);
+  --lg: rgb(59, 55, 53);
+  --bg: rgb(35, 33, 32);
+  --r: rgb(221, 39, 45);
+  --y: rgb(247, 191, 61);
+  --g: rgb(0, 145, 72);
 }
+
+font-family: 'Contrail One', cursive;
+font-family: 'Roboto', sans-serif;
 
 html {
   margin: 0 0 0 0;
 }
 
 body {
-  height: 15vh;
-  /* background-color: blue; */
+  margin: 0 0 0 0;
+  font-family: 'Roboto', sans-serif;
 }
 
+h1 {
+  font-size: 8vh;
+    color: var(--r);
+    margin: 7vh 0;
+}
+
+.panel {
+  height: 25vh;
+  text-align: center;
+  background-color: var(--bg);
+  color: var(--y);
+  font-family: 'Contrail One', cursive;
+}
 #admin-panel {
   display:grid;
-  grid-template: 15vh / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr
-}
-
-#inst-panel {
-  display:grid;
-  grid-template: 15vh / 1fr 1fr 1fr 1fr
+  grid-template: 25vh / 1fr;
 }
 
 
 #pub-panel {
   display: grid;
-  grid-template: 15vh / 1fr 1fr 1fr 1fr 1fr 1fr
+  grid-template: 25vh / 37% 18% 15% 20% 10%
 }
 
-#pub-foot {
-  display: grid;
-  grid-template: 15vh / 1fr 1fr 1fr 1fr 1fr
+#pub-panel div h1 {
+  text-align: left;
+  padding-left: 2vw;
 }
 
-#log-foot {
-  display: grid;
-  grid-template: 15vh / 1fr 1fr 1fr 1fr 1fr 1fr
+#pub-panel div:nth-child(2) {
+  font-size: 4vh;
+  padding-top: 8vh;
+}
+#pub-panel div:nth-child(3) {
+  font-size: 4vh;
+  padding-top: 8vh;
+}
+#pub-panel div:nth-child(4) {
+  font-size: 4vh;
+  padding-top: 8vh;
+}
+
+#pub-panel div:nth-child(5) {
+  padding-top: 3vh;
+}
+
+.headpic {
+  max-height: 95%;
 }
 
 .foot {
+    height: 15vh;
   text-align: center;
-  margin-top: 10vh;
+  background-color: var(--bg);
+  color: var(--y);
+  display: grid;
+  grid-template: 15vh / 1fr 1fr 1fr 1fr 1fr;
+  padding-top: 7vh;
+  font-family: 'Contrail One', cursive;
+  font-size: 4vh;
 }
 
-.panel {
-  text-align: center;
+.foot a {
+  text-decoration: none;
+    color: var(--y);
+}
+
+.panel a {
+  text-decoration: none;
+  color: var(--y);
+}
+
+.green a{
+  color: var(--g);
+}
+
+.red a{
+  color: var(--r);
 }

@@ -1,2 +1,24 @@
+
+<% if logged_in? && current_user.admin %>
+<section>
+  <div><h2>Instructors</h2>
+    <p><%= link_to 'Register A New Instructor', register_path %></p>
+    <p><%= link_to "View All Instructors", all_inst_path %></p>
+  </div>
+  <div><h2>Courses</h2>
+    <p><%= link_to 'Register A New Course', new_course_path %></p>
+    <p><%= link_to "View All Courses", mycourses_path %></p>
+</div>
+
+<div><h2>Students</h2>
+  <p><%= link_to "View All Students", allstudents_path %></p>
+  </div>
+  <div>
+    <h2>Applicants</h2>
+      <p><%= link_to "View All Applicants", allapplicants_path %></p>
+</div>
+</section>
+<% else %>
 Postboy Driving School
 <p><%= link_to 'Course Catalog', all_courses_path %></p>
+<% end %>

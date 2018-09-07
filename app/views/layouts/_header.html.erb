@@ -1,10 +1,12 @@
 
   <% if is_inst? %>
-  <nav id='inst-panel' class='panel'>
+  <nav id='pub-panel' class='panel'>
+  <div class='red'><h1><%= link_to 'Postboy Driving School', root_path %></h1></div>
   <div><%= link_to "My Profile", profile_path %></div>
-  <div><%= link_to 'Log out', logout_path, method: :delete %></div>
   <div><%= link_to "My Cohorts", mycohorts_path %></div>
   <div><%= link_to "Student Search", search_path %></div>
+  <div>  <img src='/light.png' class='headpic'></div>
+
   </nav>
   <% else %>
 
@@ -13,16 +15,9 @@
 
 <% if is_admin? %>
 <nav id='admin-panel' class='panel'>
-  <div><%= link_to 'Home', root_path %></div>
-  <div><%= link_to "All Courses", mycourses_path %></div>
-  <div><%= link_to 'Register A new Instructor', register_path %></div>
-  <div><%= link_to 'Register A new Course', new_course_path %></div>
-  <div><%= link_to "All Instructors", all_inst_path %></div>
-  <div><%= link_to "All Applicants", allapplicants_path %></div>
-  <div><%= link_to "All Students", allstudents_path %></div>
+  <div class='red'><h1><%= link_to 'Postboy Driving School Admin Panel', root_path %></h1></div>
 
-  <div><%= link_to "Student Search", search_path %></div>
-    <div><%= link_to 'Log out', logout_path, method: :delete %>
+
   </nav>
 <% else %>
 <% end %>
@@ -31,11 +26,11 @@
 <nav id='pub-panel' class='panel'>
 
 
-  <div><%= link_to 'Postboy Logo', root_path %></div>
+  <div class='red'><h1><%= link_to 'Postboy Driving School', root_path %></h1></div>
   <div><%= link_to 'Check Out Our Courses!',  all_courses_path %></div>
-  <div><h1>Postboy Driving School</h1></div>
   <div><%= link_to 'About Us', about_path %></div>
-  <div><%= link_to 'Apply for a Course Today!', all_courses_path %></div>
+  <div class="green"><%= link_to 'Apply for a Course Today!', all_courses_path %></div>
+  <div>  <img src='/light.png' class='headpic'></div>
 </nav>
 <% else %>
 

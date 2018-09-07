@@ -10,7 +10,12 @@
 <p>About: <%= @student.about %></p>
 <p>Education: <%= @student.education %></p>
 <p>Student ID: <%= @student.sid %></p>
+<p>Proficiencies Earned: <% @student.rewards.nil? ? 'None earned' : @student.rewards %><br>
 <% end %>
+<% if is_inst? && @student.accepted? && !is_admin? %>
+<%= link_to "Pass/Fail #{@student.name}", edit_course_student_path%>
+<% else%>
+<%end%>
 <% if is_admin? && !@student.accepted? %>
 <%= link_to "Review Applicant #{@student.name}", edit_course_student_path%>
 <% else %>

@@ -2,7 +2,7 @@
 <h1><%= render 'layouts/oops' %></h1>
 <% else %>
 <% end %>
-<% if logged_in? && @student.accepted? %>
+<% if logged_in? && @student.accepted? && is_admin? %>
 <h1> Edit Student </h1>
 <%= form_for([@course, @student]) do |es| %>
 <label>First Name </label><%= es.text_field :name %><br>
@@ -37,3 +37,20 @@
 <% end%>
 <% else %>
 <% end %>
+<% if logged_in? && @student.accepted? && !is_admin? %>
+<h1> Pass a Student </h1>
+<p>First Name: <%= @student.name %></p>
+<p>Last Name: <%= @student.last_name %></p>
+<p>Address: <%= @student.full_address %></p>
+<p>Age: <%= @student.age %></p>
+<p>About: <%= @student.about %></p>
+<p>Education: <%= @student.education %></p>
+<p>Student ID: <%= @student.sid %></p>
+<p>Pass this Student<p>
+  <%= form_for([@course, @student]) do |f| %>
+  <label>Confirm Earned Proficiency </label><br>
+<label>Proficiency:</label><%= f.collection_select :rewards, @courses, :reward, :reward, {include_blank: true} %><br>
+  <%= f.submit 'Pass Student', data:{confirm:'Are you sure?'} %></p>
+<% end%>
+<% else%>
+<%end%>

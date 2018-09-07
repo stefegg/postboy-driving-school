@@ -42,6 +42,7 @@ class StudentsController < ApplicationController
 
     def edit
       @cohort = Cohort.all
+      @courses = Course.all
     end
 
     def index

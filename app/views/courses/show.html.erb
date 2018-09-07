@@ -1,7 +1,8 @@
 <label>Course Name:</label><h1><%= @course.name %><br></h1>
 <p><label>Description:</label><%= @course.description %></p><br>
 <p><label>Course Hours:</label><%= @course.hours %></p><br>
-<p><label>Course Reward:</label><%= @course.reward %></p><br>
+<p><label>Course Cost:</label><%= @course.cost %></p><br>
+<p><label>Proficiency Earned:</label><%= @course.reward %></p><br>
 <hr>
   <h3>Course Cohorts</h3>
   <% @course.cohorts.each do |cohort| %>

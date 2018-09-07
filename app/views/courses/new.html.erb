@@ -8,6 +8,7 @@
 <label> Course Description: </label><br><%= f.text_area :description, required: true  %><br>
 <label>Course Hours: </label><%= f.select :hours, [[8, 8], [16, 16], [24, 24]], required: true %><br>
 <label>Course Reward: </label><%= f.select :reward, [["Safety Certificate", "Safety Certificate"], ["Bus Driver License", "Bus Driver Liecnse"], ["Automobile Driver's License", "Automobile Driver's License"]], required: true %><br>
+<label> Course Cost: </label><br> <%= f.text_field :cost, required: true  %><br>
 
 <%= f.submit 'Register Course' %><br>
 <% end %>
