@@ -1,6 +1,6 @@
 
 <% if logged_in? && current_user.admin %>
-<section>
+<section class="admin">
   <div><h2>Instructors</h2>
     <p><%= link_to 'Register A New Instructor', register_path %></p>
     <p><%= link_to "View All Instructors", all_inst_path %></p>
@@ -19,6 +19,8 @@
 </div>
 </section>
 <% else %>
+<section class='home'>
 Postboy Driving School
-<p><%= link_to 'Course Catalog', all_courses_path %></p>
+<%= link_to 'Course Catalog', all_courses_path %>
+</section>
 <% end %>

@@ -37,6 +37,7 @@ html {
 body {
   margin: 0 0 0 0;
   font-family: 'Roboto', sans-serif;
+    background-color: var(--mg);
 }
 
 h1 {
@@ -45,8 +46,67 @@ h1 {
     margin: 7vh 0;
 }
 
+ul {
+  margin: 0 0 0 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.admin {
+  max-width: 80%;
+  display: grid;
+  grid-template: 50% 50% / 47.5% 47.5%;
+  margin: 0 10%;
+  text-align: center;
+  grid-row-gap: 5%;
+  grid-column-gap: 5%;
+  background-color: var(--sg);
+  background-image: url("/p-head.png");
+   background-size: auto;
+   background-position: center;
+    background-repeat: no-repeat;
+    height: 50vh;
+}
+
+.admin h2 {
+  font-family: 'Contrail One', cursive;
+  font-size: 5vh;
+}
+
+.admin p a{
+  font-size: 3vh;
+  color: var(--purps);
+}
+
+.login {
+  text-align: center;
+  height: 40vh;
+}
+
+.login h1 {
+  font-family: 'Contrail One', cursive;
+  font-size: 5vh;
+  margin-bottom: 0;
+}
+
+.login-btn {
+  font-family: 'Roboto', sans-serif;
+  margin-top: 5%;
+}
+
+.home {
+  background-color: var(--mg);
+}
+
+.about {
+  background-color: var(--mg);
+}
+
 .panel {
   height: 25vh;
+  padding-bottom: 5vh;
   text-align: center;
   background-color: var(--bg);
   color: var(--y);
@@ -56,7 +116,6 @@ h1 {
   display:grid;
   grid-template: 25vh / 1fr;
 }
-
 
 #pub-panel {
   display: grid;
@@ -85,12 +144,8 @@ h1 {
   padding-top: 3vh;
 }
 
-.headpic {
-  max-height: 95%;
-}
-
 .foot {
-    height: 15vh;
+  height: 15vh;
   text-align: center;
   background-color: var(--bg);
   color: var(--y);
@@ -102,12 +157,10 @@ h1 {
 }
 
 .foot a {
-  text-decoration: none;
-    color: var(--y);
+  color: var(--y);
 }
 
 .panel a {
-  text-decoration: none;
   color: var(--y);
 }
 
@@ -117,4 +170,8 @@ h1 {
 
 .red a{
   color: var(--r);
+}
+
+.headpic {
+  max-height: 95%;
 }
