@@ -1,4 +1,0 @@
-<h1>All Postboy Applicants</h1>
-<% @student.each do |student| %>
-<%= link_to "#{student.name}", course_student_path(student.course_id, student.id) %><br>
-<% end %>

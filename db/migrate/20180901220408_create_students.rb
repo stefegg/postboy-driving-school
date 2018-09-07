@@ -15,8 +15,8 @@ class CreateStudents < ActiveRecord::Migration[5.2]
       t.integer :cohort_id
       t.integer :course_id
       t.string :sid
-      t.boolean :reviewed, default: false
       t.boolean :accepted, default: false
+      t.boolean :denied, default: false
       t.text :rewards
 
       t.timestamps

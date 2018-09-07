@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  get 'applicants/new'
-  get 'applicants/edit'
-  get 'applicants/show'
+
   get 'allapplicants' => 'students#all'
 root 'pages#home'
 
@@ -10,7 +8,6 @@ resources :instructors
 resources :courses do
   resources :cohorts
   resources :students
-  resources :applicants
 end
 
 get 'new_course' => 'courses#new'

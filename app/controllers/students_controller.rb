@@ -33,7 +33,7 @@ class StudentsController < ApplicationController
     end
   end
     def all
-      @student = Student.where(accepted: false)
+      @student = Student.where(accepted: false, denied: false)
     end
 
     def show
@@ -83,7 +83,7 @@ end
     private
 
     def student_params
-      params.require(:student).permit(:name, :last_name, :email, :address, :city, :state, :zip, :about, :agree, :age, :education, :accepted, :reviewed, :rewards, :cohort_id)
+      params.require(:student).permit(:name, :last_name, :email, :address, :city, :state, :zip, :about, :agree, :age, :education, :accepted, :denied, :rewards, :cohort_id)
     end
 
     def find_course

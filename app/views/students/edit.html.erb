@@ -31,7 +31,8 @@
 <p>Applicant ID: <%= @student.sid %></p>
 <p>Accept this Student?<p>
   <%= form_for([@course, @student]) do |d| %>
-  <%= d.check_box :accepted %>
+<p>Accepted  <%= d.check_box :accepted %></p>
+  <p>  Denied<%= d.check_box :denied %></p>
   <%= d.submit 'Accept Student', data:{confirm:'Are you sure?'} %></p>
 <% end%>
 <% else %>
