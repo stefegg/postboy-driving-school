@@ -13,9 +13,10 @@ class StudentsController < ApplicationController
       @student.course_id = @course.id
       @student.generate_sid
       if @student.save
-        msg = "Student Registration Complete!!"
+        msg = "Student Application Complete!!"
         flash[:notice] = msg
         redirect_to course_path(@student.course_id)
+        UserMailer.with(student: @student).app_email.deliver_now
       else
         errors = @student.errors.full_messages
         flash.now[:error] = errors.flatten
