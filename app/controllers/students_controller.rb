@@ -79,7 +79,7 @@ class StudentsController < ApplicationController
       @final_results << y
     end
   end
-  @final_results
+  @final_results.uniq!
 end
 end
     private

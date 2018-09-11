@@ -1,15 +1,16 @@
+<section class='cohort'>
 <h1> <%= @cohort.name %></h1>
 <p>Description: <%= @cohort.description %></p>
-<p>Start Date: <%= @cohort.start_date %><p>
-  <p>End Date: <%= @cohort.end_date %><p>
+<p>Start Date: <%= @cohort.start_date.strftime("%B %e %Y") %></p>
+  <p>End Date: <%= @cohort.end_date.strftime("%B %e %Y") %></p>
+    <p>Instructor:<%= @cohort.instructor %></p>
 <br>
 <hr>
-Instructor:<%= @cohort.instructor %>
-Students:<br>
+<h2>Students:<br></h2>
 <% @cohort.students.each do |student| %>
 <% if student.accepted? %>
-<%= student.full_name %><br>
-<%= link_to "#{student.full_name}", course_student_path(@course.id, student.id) %></h5>
+<p>
+<%= link_to "#{student.full_name}", course_student_path(@course.id, student.id) %>, <%= student.email %>, Student ID: <%= student.sid %><br></p>
 <% else%>
 <%end%>
 <% end %><br>
@@ -17,3 +18,4 @@ Students:<br>
 <%= link_to "Edit #{@cohort.name}", edit_course_cohort_path%>
 <% else %>
 <% end %>
+</section>

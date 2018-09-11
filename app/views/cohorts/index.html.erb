@@ -1,4 +1,6 @@
+<section class='cohort'>
 <h1>My Cohorts</h1>
 <% @cohorts.each do |com| %>
-<%= link_to "#{com.name}", course_cohort_path(com.course_id, com.id) %><br>
+<p><%= link_to "#{com.name}", course_cohort_path(com.course_id, com.id) %></p><br>
 <% end %>
+</section>

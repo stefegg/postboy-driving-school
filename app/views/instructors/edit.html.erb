@@ -1,4 +1,6 @@
 <% if is_admin? %>
+<section class='edit'>
+
 <h1>Edit Instructor<%= @instructor.full_name%> </h1>
 <%= form_for(@instructor) do |f| %><br>
   <%= f.text_field :name, placeholder: 'Name' %><br>
@@ -17,14 +19,16 @@
   <% end %>
   <% else %>
   <% end %>
-
+</section>
 <% if is_inst? %>
+<section class='edit'>
 <%= form_for(@user) do |d| %><br>
 <h1>Change Password or Update Bio (Optional) for <%= @instructor.full_name%> </h1>
-<%= d.text_area :bio, placeholder: 'Write a quick bio' %>  <br>
-<%= d.password_field :password, placeholder: 'Create a Password', required: true %><br>
-<%= d.password_field :password_confirmation, placeholder: 'Confirm Password', required: true %> <br>
-  <%= d.submit 'Save Changes' %>
+<label>Update Bio:<br><%= d.text_area :bio, placeholder: 'Write a quick bio' %></label>  <br>
+<p><%= d.password_field :password, placeholder: 'Change Password', required: true %></p><br>
+<p><%= d.password_field :password_confirmation, placeholder: 'Confirm Password', required: true %></p> <br>
+  <%= d.submit 'Save Changes', class: 'login-btn' %>
     <% end %>
 <% else %>
 <% end %>
+</section>

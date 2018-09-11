@@ -2,10 +2,12 @@
 <% if current_user == nil %>
 <h1><%= render 'layouts/oops' %></h1>
 <% else %>
-<h1> Search Students by Full Name </h1>
+<section class='login'>
+<h1> Search Students by Full Name </h1><br>
 <%= form_tag('/results', method: 'get') do %>
 <%= text_field_tag(:q) %> &nbsp<br>
 <label>
-<%= submit_tag("Search") %>
+<%= submit_tag("Search")%>
 <% end %>
 <% end %>
+</section>

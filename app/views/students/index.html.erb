@@ -1,9 +1,10 @@
 <% if current_user == nil %>
 <h1><%= render 'layouts/oops' %></h1>
 <% else %>
-
+<section class="all">
 <h1>All Postboy Students</h1>
 <% @student.each do |student| %>
-<%= link_to "#{student.name}", course_student_path(student.course_id, student.id) %><br>
+<p><%= link_to "#{student.full_name}", course_student_path(student.course_id, student.id) %></p>
 <% end %>
 <% end %>
+</section>

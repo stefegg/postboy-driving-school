@@ -1,20 +1,22 @@
 <% if current_user == nil %>
 <h1><%= render 'layouts/oops' %></h1>
 <% else %>
+<section class='reg'>
 <h1>Register an Instructor</h1>
-<%= form_for(@user) do |f| %><br>
-  <%= f.text_field :name, placeholder: 'Name' %><br>
-  <%= f.text_field :last_name, placeholder: 'Last Name'  %> <br>
-  <%= f.email_field :email, placeholder: 'Email', required: true  %>  <br>
-  <%= f.password_field :password, placeholder: 'Create a Password', required: true %><br>
-  <%= f.password_field :password_confirmation, placeholder: 'Confirm Password', required: true %> <br>
-  <%= f.label :photo, 'Upload a photo' %><br>
-  <%= f.file_field :photo %><br>
-  <label>Education: </label><%= f.select :education, [["Walking", "Walking"], ["Bike Riding", "Bike Riding"], ["Taking the Bus", "Taking the Bus"], ["Postboy Driver", "Postboy Driver"]], required: true %><br>
-  <%= f.text_field :age, placeholder: 'Age'  %> <br>
-  <%= f.text_field :salary, placeholder: 'Salary'  %> <br>
-  <%= f.text_area :bio, placeholder: 'Write a quick bio' %>  <br>
+<%= form_for(@user) do |f| %></p>
+  <p><%= f.text_field :name, placeholder: 'Name' %></p>
+  <p><%= f.text_field :last_name, placeholder: 'Last Name'  %> </p>
+  <p><%= f.email_field :email, placeholder: 'Email', required: true  %>  </p>
+  <p><%= f.password_field :password, placeholder: 'Create a Password', required: true %></p>
+  <p><%= f.password_field :password_confirmation, placeholder: 'Confirm Password', required: true %> </p>
+  <p><%= f.label :photo, 'Upload a photo' %>
+  <%= f.file_field :photo %></p>
+  <label>Education: </label><%= f.select :education, [["Walking", "Walking"], ["Bike Riding", "Bike Riding"], ["Taking the Bus", "Taking the Bus"], ["Postboy Driver", "Postboy Driver"]], required: true %></p>
+  <p><%= f.text_field :age, placeholder: 'Age'  %> </p>
+  <p><%= f.text_field :salary, placeholder: 'Salary'  %> </p>
+  <p><%= f.text_area :bio, placeholder: 'Write a quick bio' %>  </p>
 
   <%= f.submit 'Register' %>
   <% end %>
 <% end %>
+</section>

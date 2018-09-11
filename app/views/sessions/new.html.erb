@@ -1,8 +1,8 @@
 <section class="login">
 <h1>Instructor Log In</h1>
 <%= form_for(:session, url: login_path) do |f| %>
-<%= f.email_field :email, required: true %><br>
-<%= f.password_field :password, placeholder: "Password!", required: true %><br>
+<p><%= f.email_field :email, required: true %></p>
+<p><%= f.password_field :password, placeholder: "Password!", required: true %></p>
 <%= f.submit 'Log In', class: 'login-btn'%>
 <% end %>
 </section>

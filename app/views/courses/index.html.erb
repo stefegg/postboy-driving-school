@@ -1,4 +1,6 @@
+<section class="all">
 <h1>All Postboy Courses</h1>
 <% @course.each do |cor| %>
-<%= link_to "#{cor.name}", cor %><br>
+<p><%= link_to "#{cor.name}", cor %></p>
 <% end %>
+</section>

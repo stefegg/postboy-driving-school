@@ -1,7 +1,8 @@
 <% if !logged_in? %>
 <h1><%= render 'layouts/oops' %></h1>
 <% else %>
-<h1> <%= @student.name %></h1>
+<section class='profile'>
+<h1> <%= @student.full_name %></h1>
 <%= @student.photo.attachment.nil? ? 'No photo' : image_tag(@student.photo, size: '100x100') %><br>
 <p>First Name: <%= @student.name %></p>
 <p>Last Name: <%= @student.last_name %></p>
@@ -10,17 +11,18 @@
 <p>About: <%= @student.about %></p>
 <p>Education: <%= @student.education %></p>
 <p>Student ID: <%= @student.sid %></p>
-<p>Proficiencies Earned: <% @student.rewards.nil? ? 'None earned' : @student.rewards %><br>
+<p>Proficiencies Earned: <%= @student.rewards.nil? ? 'None earned' : @student.rewards %><br>
 <% end %>
 <% if is_inst? && @student.accepted? && !is_admin? %>
-<%= link_to "Pass/Fail #{@student.name}", edit_course_student_path%>
+<p><%= link_to "Pass/Fail #{@student.name}", edit_course_student_path%></p>
 <% else%>
 <%end%>
 <% if is_admin? && !@student.accepted? %>
-<%= link_to "Review Applicant #{@student.name}", edit_course_student_path%>
+<p><%= link_to "Review Applicant #{@student.name}", edit_course_student_path%></p>
 <% else %>
 <% end %>
 <% if is_admin? && @student.accepted? %>
-<%= link_to "Edit Student #{@student.name}", edit_course_student_path%>
+<p><%= link_to "Edit Student #{@student.name}", edit_course_student_path%></p>
 <% else %>
 <% end %>
+</section>
