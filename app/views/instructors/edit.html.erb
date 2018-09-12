@@ -27,6 +27,8 @@
 <label>Update Bio:<br><%= d.text_area :bio, placeholder: 'Write a quick bio' %></label>  <br>
 <p><%= d.password_field :password, placeholder: 'Change Password', required: true %></p><br>
 <p><%= d.password_field :password_confirmation, placeholder: 'Confirm Password', required: true %></p> <br>
+<p>Admin?  <%= d.check_box :admin %></p>
+
   <%= d.submit 'Save Changes', class: 'login-btn' %>
     <% end %>
 <% else %>
