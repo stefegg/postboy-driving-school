@@ -1,6 +1,4 @@
-<% if current_user == nil %>
-<h1><%= render 'layouts/oops' %></h1>
-<% else %>
+
 <section class='reg'>
 <h1>Register an Instructor</h1>
 <%= form_for(@user) do |f| %></p>
@@ -18,5 +16,5 @@
 
   <%= f.submit 'Register' %>
   <% end %>
-<% end %>
+
 </section>

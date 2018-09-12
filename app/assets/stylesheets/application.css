@@ -306,7 +306,9 @@ form input[type= "Submit"] {
 }
 
 .edit p {
-  margin-bottom: 0
+  margin-bottom: 0;
+    color: var(--y);
+    font-size: 2vh;
 }
 
 

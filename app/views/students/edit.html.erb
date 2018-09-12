@@ -3,24 +3,27 @@
 <% else %>
 <% end %>
 <% if logged_in? && @student.accepted? && is_admin? %>
+<section class='edit'>
 <h1> Edit Student </h1>
 <%= form_for([@course, @student]) do |es| %>
-<label>First Name </label><%= es.text_field :name %><br>
-<label>Last Name</label><%= es.text_field :last_name %><br>
-<label>Email</label><%= es.email_field :email %><br>
-<label>Street Address</label><%= es.text_field :address %><br>
-<label>City</label><%= es.text_field :city %> <label>State</label><%= es.text_field :state %><label>Zip Code</label><%= es.text_field :zip%><br>
-<%= es.label :photo, 'Upload a photo' %><br>
-<%= es.file_field :photo %><br>
-<label>About</label><%= es.text_area :about %>
-<label>Age</label><%= es.text_field :age, placeholder: 'Age'  %> <br>
-<label>Education: </label><%= es.select :education, [["Walking", "Walking"], ["Bike Riding", "Bike Riding"], ["Taking the Bus", "Taking the Bus"], ["Postboy Driver", "Postboy Driver"]], required: true %><br>
-<label>Cohort:</label><%= es.collection_select :cohort_id, @cohort, :id, :name, {include_blank: true} %><br>
-<%= es.submit 'Update Student' %></p>
+<p><label>First Name </label><%= es.text_field :name %></p>
+<p><label>Last Name</label><%= es.text_field :last_name %></p>
+<p><label>Email</label><%= es.email_field :email %></p>
+<p><label>Street Address</label><%= es.text_field :address %></p>
+<p><label>City</label><%= es.text_field :city %> <label>State</label><%= es.text_field :state %><label>Zip Code</label><%= es.text_field :zip%></p>
+<p><%= es.label :photo, 'Upload a photo' %><%= es.file_field :photo %></p>
+<p><label>About</label><%= es.text_area :about %></p>
+<p><label>Age</label><%= es.text_field :age, placeholder: 'Age'  %></p>
+<p><label>Education: </label><%= es.select :education, [["Walking", "Walking"], ["Bike Riding", "Bike Riding"], ["Taking the Bus", "Taking the Bus"], ["Postboy Driver", "Postboy Driver"]], required: true %></p>
+<p><label>Cohort:</label><%= es.collection_select :cohort_id, @cohort, :id, :name, {include_blank: true} %></p>
+<%= es.submit 'Update Student' %>
 <% end %>
 <% else %>
 <% end %>
+</section>
+
 <% if is_admin? && !@student.accepted? %>
+<section class='edit'>
 <h1> Review Student for Approval </h1>
 <p>First Name: <%= @student.name %></p>
 <p>Last Name: <%= @student.last_name %></p>
@@ -37,7 +40,10 @@
 <% end%>
 <% else %>
 <% end %>
+</section>
+
 <% if logged_in? && @student.accepted? && !is_admin? %>
+<section class='edit'>
 <h1> Pass a Student </h1>
 <p>First Name: <%= @student.name %></p>
 <p>Last Name: <%= @student.last_name %></p>
@@ -46,11 +52,12 @@
 <p>About: <%= @student.about %></p>
 <p>Education: <%= @student.education %></p>
 <p>Student ID: <%= @student.sid %></p>
-<p>Pass this Student<p>
+<p>Pass this Student</p>
   <%= form_for([@course, @student]) do |f| %>
-  <label>Confirm Earned Proficiency </label><br>
-<label>Proficiency:</label><%= f.collection_select :rewards, @courses, :reward, :reward, {include_blank: true} %><br>
-  <%= f.submit 'Pass Student', data:{confirm:'Are you sure?'} %></p>
+  <p><label>Confirm Earned Proficiency </label></p>
+<p><label>Proficiency:</label><%= f.collection_select :rewards, @courses, :reward, :reward, {include_blank: true} %></p>
+  <%= f.submit 'Pass Student', data:{confirm:'Are you sure?'} %>
 <% end%>
 <% else%>
 <%end%>
+</section>
