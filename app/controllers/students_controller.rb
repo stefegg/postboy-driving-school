@@ -85,7 +85,7 @@ end
     private
 
     def student_params
-      params.require(:student).permit(:name, :last_name, :email, :address, :city, :state, :zip, :about, :agree, :age, :education, :accepted, :denied, :rewards, :cohort_id)
+      params.require(:student).permit(:name, :last_name, :email, :photo, :address, :city, :state, :zip, :about, :agree, :age, :education, :accepted, :denied, :rewards, :cohort_id)
     end
 
     def find_course

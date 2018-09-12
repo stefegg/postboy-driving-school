@@ -1,20 +1,13 @@
+<section class='courses'>
 <h1>Check out Postboy's Courses</h1>
+<div class='course-cont'>
 <% @courses.each do |c| %>
-<div>
-<label>Course Name: <%= link_to "#{c.name}", c%></label<br>
-  <label>Course Description: <%= c.description %></label<br>
-    <label>Number of Hours: <%= c.hours %></label<br>
-      <label>Proficiency Awarded: <%= c.reward %></label<br>
-
+<div class='cont-inner'>
+<h2><label><%= link_to "#{c.name}", c%></label></h2>
+  <p><label>Description: <%= c.description %></label</p>
+    <p><label>Number of Hours: <%= c.hours %></label</p>
+      <p><label>Proficiency Awarded: <%= c.reward %></label</p>
 </div>
 <% end %>
-<h1>Upcoming Cohorts</h1>
-<% @cohorts.each do |d| %>
-<div>
-<label>Cohort Name: <%= d.name %></label<br>
-  <label>Cohort Description: <%= d.description %></label<br>
-    <label>Dates: <%= d.cohort_dates %></label<br>
-  <label>Instructor: <%= d.instructor %>
-
 </div>
-<% end %>
+</section>

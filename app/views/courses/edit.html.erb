@@ -1,16 +1,18 @@
 <% if current_user == nil %>
 <h1><%= render 'layouts/oops' %></h1>
 <% else %>
-
+<section class='reg'>
 <h1>Edit <%= @course.name %></h1>
 
 <%= form_for(@course) do |f| %>
-<label> Course Name: </label><br> <%= f.text_field :name, required: true  %><br>
-<label> Course Description: </label><br><%= f.text_area :description, required: true  %><br>
-<label>Course Hours: </label><%= f.select :hours, [[8, 8], [16, 16], [24, 24]], required: true %><br>
-<label>Course Reward: </label><%= f.select :reward, [["Safety Certificate", "Safety Certificate"], ["Bus Driver License", "Bus Driver Liecnse"], ["Automobile Driver's License", "Automobile Driver's License"]], required: true %><br>
-<label> Course Cost: </label><br> <%= f.text_field :cost, required: true  %><br>
-
-<%= f.submit 'Update Course' %><br>
+<p><label> Course Name: </label><br> <%= f.text_field :name, required: true  %></p>
+<p><label> Course Description: </label><br><%= f.text_area :description, required: true  %></p>
+<p><label>Course Hours: </label><%= f.select :hours, [[8, 8], [16, 16], [24, 24]], required: true %></p>
+<p><label>Course Reward: </label><%= f.select :reward, [["Safety Certificate", "Safety Certificate"], ["Bus Driver License", "Bus Driver Liecnse"], ["Automobile Driver's License", "Automobile Driver's License"]], required: true %></p>
+<p><label> Course Cost: </label>$ <%= f.text_field :cost, required: true  %></p>
+<p><%= f.label :photo, 'Upload a photo' %>
+<%= f.file_field :photo %></p>
+<%= f.submit 'Update Course' %>
 <% end %>
 <% end %>
+</section>

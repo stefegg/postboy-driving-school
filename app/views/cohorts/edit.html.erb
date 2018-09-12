@@ -1,20 +1,17 @@
 <% if current_user == nil %>
 <h1><%= render 'layouts/oops' %></h1>
 <% else %>
+<section class='profile'>
 <h1>Edit Cohort</h1>
 
 <%= form_for([@course, @cohort]) do |u| %>
 <!-- use the array here because it's a uorm and it's nested - you need the company to get to the dept -->
-<label> Name</label><%= u.text_field :name %><br>
-<label> Description</label><%= u.text_field :description %><br>
-<label>Start Date:</label>
-<%= u.date_select :start_date, required: true %><br>
-<label>End Date:</label>
-<%= u.date_select :end_date, required: true %><br>
-<p>
-<label>Instructor:</label><%= u.collection_select :instructor, @instructor, :full_name, :full_name, {include_blank: true} %><br>
-
+<p><label> Name: </label><%= u.text_field :name %></p>
+<p><label> Description: </label><%= u.text_field :description %></p>
+<p><label>Start Date: </label><%= u.date_select :start_date, required: true %></p>
+<p><label>End Date:</label><%= u.date_select :end_date, required: true %></p>
+<p><label>Instructor:</label><%= u.collection_select :instructor, @instructor, :full_name, :full_name, {include_blank: true} %></p>
 <%= u.submit 'Update Cohort' %>
-</p>
 <% end %>
 <% end %>
+</section>

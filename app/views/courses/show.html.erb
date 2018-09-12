@@ -1,25 +1,27 @@
-<label>Course Name:</label><h1><%= @course.name %><br></h1>
-<p><label>Description:</label><%= @course.description %></p><br>
-<p><label>Course Hours:</label><%= @course.hours %></p><br>
-<p><label>Course Cost:</label><%= @course.cost %></p><br>
-<p><label>Proficiency Earned:</label><%= @course.reward %></p><br>
+<section class='course' style="background-image: <%=@course.photo%>">
+<h1><%= @course.name %></h1>
+<p><label>Description: </label><%= @course.description %></p>
+<p><label>Course Hours: </label><%= @course.hours %> Hours</p>
+<p><label>Course Cost: $</label><%= @course.cost %></p>
+<p><label>Proficiency Earned: </label><%= @course.reward %></p>
 <hr>
-  <h3>Course Cohorts</h3>
+  <h3>Upcoming Course Cohorts</h3>
   <% @course.cohorts.each do |cohort| %>
     <% if not_logged? %>
-    <h5><%="#{cohort.name}"%></h5>
+    <p><%="#{cohort.name}"%></p>
   <%else%>
-  <h5><%= link_to "#{cohort.name}", course_cohort_path(@course.id, cohort.id) %></h5>
+  <p><%= link_to "#{cohort.name}", course_cohort_path(@course.id, cohort.id) %></p>
   <%end%>
   <% end %><% if not_logged?%>
-  <%= link_to 'Apply to this Course!', new_course_student_path(@course.id) %>
+  <p><%= link_to 'Apply to this Course!', new_course_student_path(@course.id) %></p>
   <% else%>
 <% end %>
 <% if is_admin? %>
-  <p><%= link_to "Edit #{@course.name}", edit_course_path(@course.id)%></p>
-  <%= link_to 'Create a Cohort', new_course_cohort_path(@course.id) %>
-  <%= link_to 'Add a Student', new_course_student_path(@course.id) %>
+  <div class='ez-grid'>
+  <div><p><%= link_to "Edit #{@course.name}", edit_course_path(@course.id)%></p></div>
+<div>  <p><%= link_to 'Create a Cohort', new_course_cohort_path(@course.id) %></p></div>
+</div>
   <% else %>
   <% end %>
 
-  <hr>
+</section>

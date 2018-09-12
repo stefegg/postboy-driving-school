@@ -1,9 +1,10 @@
 <% if current_user == nil %>
 <h1><%= render 'layouts/oops' %></h1>
 <% else %>
+<section class='profile'>
 <h1><%= @instructor.full_name %> </h1><br>
+<%= @instructor.photo.attachment.nil? ? 'No photo' : image_tag(@instructor.photo) %><br>
 <h3>School ID # <%= @instructor.sid %></h3>
-<%= @instructor.photo.attachment.nil? ? 'No photo' : image_tag(@instructor.photo, size: '100x100') %><br>
 <p>Email: <%= @instructor.email %></p>
 <p>Bio: <%= @instructor.bio %></p>
 <p>Age: <%= @instructor.age %></p>
@@ -14,3 +15,4 @@
 <% else %>
 <% end %>
 <% end %>
+</section>

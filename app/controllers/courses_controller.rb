@@ -41,7 +41,7 @@ end
   private
 
   def course_params
-    params.require(:course).permit(:name, :description, :hours, :cost, :reward)
+    params.require(:course).permit(:name, :description, :hours, :photo, :cost, :reward)
 end
 
   def find_course

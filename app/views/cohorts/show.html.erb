@@ -3,7 +3,7 @@
 <p>Description: <%= @cohort.description %></p>
 <p>Start Date: <%= @cohort.start_date.strftime("%B %e %Y") %></p>
   <p>End Date: <%= @cohort.end_date.strftime("%B %e %Y") %></p>
-    <p>Instructor:<%= @cohort.instructor %></p>
+    <p>Instructor: <%= @cohort.instructor %></p>
 <br>
 <hr>
 <h2>Students:<br></h2>
@@ -13,9 +13,9 @@
 <%= link_to "#{student.full_name}", course_student_path(@course.id, student.id) %>, <%= student.email %>, Student ID: <%= student.sid %><br></p>
 <% else%>
 <%end%>
-<% end %><br>
-<% if is_admin? %>
-<%= link_to "Edit #{@cohort.name}", edit_course_cohort_path%>
+<% end %>
+<% if current_user.admin %>
+<p><%= link_to "Edit #{@cohort.name}", edit_course_cohort_path%></p>
 <% else %>
 <% end %>
 </section>

@@ -1,7 +1,7 @@
 <% if is_admin? %>
 <section class='edit'>
 
-<h1>Edit Instructor<%= @instructor.full_name%> </h1>
+<h1>Edit Instructor <%= @instructor.full_name%> </h1>
 <%= form_for(@instructor) do |f| %><br>
   <%= f.text_field :name, placeholder: 'Name' %><br>
   <%= f.text_field :last_name, placeholder: 'Last Name'  %> <br>
