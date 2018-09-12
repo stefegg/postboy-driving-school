@@ -15,9 +15,6 @@
  */
 
 :root {
-  --ainge: rgb(255, 153, 0);
-  --namek: rgb(3, 205, 69);
-  --purps: rgb(111, 20, 204);
   --sg: rgb(120, 115, 115);
   --mg: rgb(96, 92, 92);
   --lg: rgb(59, 55, 53);
@@ -29,8 +26,7 @@
   --aw: rgb(237, 237, 237);
 }
 
-font-family: 'Contrail One', cursive;
-font-family: 'Roboto', sans-serif;
+
 
 html {
   margin: 0 0 0 0;
@@ -44,8 +40,8 @@ body {
 
 h1 {
   font-size: 8vh;
-    color: var(--r);
-    margin: 7vh 0;
+  color: var(--r);
+  margin: 7vh 0;
 }
 
 h4 {
@@ -75,11 +71,11 @@ a {
   grid-column-gap: 5%;
   background-color: var(--sg);
   background-image: url("/p-head.png");
-   background-size: auto;
-   background-position: center;
-    background-repeat: no-repeat;
-    height: 50vh;
-    padding-bottom: 5vh;
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 50vh;
+  padding-bottom: 5vh;
 }
 
 .admin h2 {
@@ -127,16 +123,16 @@ a {
   max-width: 80%;
   margin-left: 10%;
   padding: 2.5%;
-        border: 5px solid var(--aw);
-        margin-top: 2vh;
-        margin-bottom: 2vh;
+  border: 5px solid var(--aw);
+  margin-top: 2vh;
+  margin-bottom: 2vh;
 }
 
 .course {
   padding-top: 3.5vh;
   text-align: center;
   font-family: 'Roboto', sans-serif;
-  /* background-color: var(--sg); */
+  background-color: var(--sg);
   border-radius: 20px;
   max-width: 80%;
   margin-left: 10%;
@@ -182,7 +178,7 @@ a {
   border-radius: 20px;
   max-width: 80%;
   margin-left: 10%;
-    min-height: 45vh;
+  min-height: 45vh;
 }
 
 .all p {
@@ -194,20 +190,20 @@ a {
   margin: 2vh 0;
   text-shadow: 1px 1px 2px rgba(35, 33, 32, 0.8);
   padding-top: 2vh;
-    color: var(--y);
+  color: var(--y);
 }
 
 .reg {
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--sg);
-    border-radius: 20px;
-    max-width: 80%;
-    margin-left: 10%;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
-    padding-bottom: 2vh;
-            border: 5px solid var(--aw);
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--sg);
+  border-radius: 20px;
+  max-width: 80%;
+  margin-left: 10%;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  padding-bottom: 2vh;
+  border: 5px solid var(--aw);
 }
 
 .reg h1 {
