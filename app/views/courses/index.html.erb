@@ -1,6 +1,6 @@
 <section class="all">
 <h1>All Postboy Courses</h1>
 <% @course.each do |cor| %>
-<p><%= link_to "#{cor.name}", cor %></p>
+<p><%= link_to "#{cor.name}", cor %> -- <%= link_to 'Delete Course', course_path(cor.id), method: :delete, data: { confirm: 'Are you sure?', remote: true}, class: 'terminate' %></p>
 <% end %>
 </section>

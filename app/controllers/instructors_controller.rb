@@ -29,6 +29,14 @@ class InstructorsController < ApplicationController
   end
 end
 
+  def destroy
+    @instructor = Instructor.find(params[:id])
+    p "Terminationg #{@instructor.full_name} from Postboy Driving School"
+    @instructor.destroy
+    respond_to do |format|
+      format.js
+    end
+  end
 
     def edit
     end

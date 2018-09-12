@@ -1,0 +1,6 @@
+<section class="all">
+<h1>All Postboy Cohorts</h1>
+<% @cohort.each do |cohort| %>
+<p><%= link_to "#{cohort.name}", course_cohort_path(cohort.course_id, cohort.id) %> -- <%= link_to 'Delete Cohort', course_cohort_path(cohort.course_id, cohort.id), method: :delete, data: { confirm: 'Are you sure?', remote: true}, class: 'terminate' %></p>
+<% end %>
+</section>

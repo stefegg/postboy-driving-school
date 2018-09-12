@@ -23,6 +23,7 @@
 <% end %>
 <% if is_admin? && @student.accepted? %>
 <p><%= link_to "Edit Student #{@student.name}", edit_course_student_path%></p>
+
 <% else %>
 <% end %>
 </section>

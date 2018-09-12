@@ -3,7 +3,7 @@
 <% else %><section class="all">
 <h1>All Instructors</h1>
 <% @instructor.each do |inst| %>
-<p><%= link_to "#{inst.full_name}", inst %><br></p>
+<p><%= link_to "#{inst.full_name}", inst %>  -- <%= link_to 'Terminate Instructor', instructor_path(inst.id), method: :delete, data: { confirm: 'Are you sure?', remote: true}, class: 'terminate' %><br></p>
 <% end %>
 <% end %>
 </section>

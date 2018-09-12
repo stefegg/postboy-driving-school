@@ -3,11 +3,17 @@ Rails.application.routes.draw do
   get 'allapplicants' => 'students#all'
 root 'pages#home'
 
-resources :instructors
-
+resources :instructors do
+      delete 'terminate' => 'instructors#destroy'
+end
 resources :courses do
-  resources :cohorts
-  resources :students
+      delete 'terminate' => 'courses#destroy'
+  resources :cohorts do
+      delete 'terminate' => 'cohorts#destroy'
+      end
+  resources :students do
+        delete 'terminate' => 'students#destroy'
+end
 end
 
 get 'new_course' => 'courses#new'
@@ -18,6 +24,7 @@ get 'courses/edit'
 
 get 'cohorts/new'
 get 'cohorts/edit'
+get 'allcohorts' => 'cohorts#all'
 get 'show_cohort' => 'cohorts#show'
 get 'mycohorts' => 'cohorts#index'
 

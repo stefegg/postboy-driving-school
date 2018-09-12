@@ -37,6 +37,15 @@ class StudentsController < ApplicationController
       @student = Student.where(accepted: false, denied: false)
     end
 
+    def destroy
+      @student = Student.find(params[:id])
+      course = Course.find(@student.course_id)
+      @student.destroy
+      respond_to do |format|
+        format.js
+      end
+    end
+
     def show
 
     end

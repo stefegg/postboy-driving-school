@@ -26,6 +26,7 @@
   --y: rgb(247, 191, 61);
   --g: rgb(0, 145, 72);
   --b: rgb(24, 24, 232);
+  --aw: rgb(237, 237, 237);
 }
 
 font-family: 'Contrail One', cursive;
@@ -78,6 +79,7 @@ a {
    background-position: center;
     background-repeat: no-repeat;
     height: 50vh;
+    padding-bottom: 5vh;
 }
 
 .admin h2 {
@@ -125,9 +127,13 @@ a {
   max-width: 80%;
   margin-left: 10%;
   padding: 2.5%;
+        border: 5px solid var(--aw);
+        margin-top: 2vh;
+        margin-bottom: 2vh;
 }
 
 .course {
+  padding-top: 3.5vh;
   text-align: center;
   font-family: 'Roboto', sans-serif;
   /* background-color: var(--sg); */
@@ -137,6 +143,7 @@ a {
   margin-bottom: 2vh;
   margin-top: 2vh;
   padding-bottom: 10px;
+  border: 5px solid var(--aw);
 }
 
 .course h1 {
@@ -151,7 +158,6 @@ a {
   display: grid;
   grid-template: 100% / 47.5% 47.5%;
 }
-
 
 
 .course p {
@@ -198,8 +204,10 @@ a {
     border-radius: 20px;
     max-width: 80%;
     margin-left: 10%;
+    margin-top: 2vh;
     margin-bottom: 2vh;
     padding-bottom: 2vh;
+            border: 5px solid var(--aw);
 }
 
 .reg h1 {
@@ -213,6 +221,8 @@ a {
 .reg p {
   margin: 0;
   margin-bottom: 2vh;
+      color: var(--y);
+
 }
 
 .profile h1 {
@@ -253,12 +263,13 @@ form input[type= "Submit"] {
   border-radius: 20px;
   max-width: 80%;
   margin-right: 10%;
-
+  margin-top: 2vh;
   margin-left: 10%;
   padding: 2%;
   padding-bottom: 7vh;
   min-height: 35vh;
   margin-bottom: 40px;
+              border: 5px solid var(--aw);
 }
 
 .cohort h2 {

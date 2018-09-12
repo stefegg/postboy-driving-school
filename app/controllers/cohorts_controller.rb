@@ -32,6 +32,20 @@ def update
   end
 end
 
+
+  def destroy
+    @cohort = Cohort.find(params[:id])
+    course = Course.find(@cohort.course_id)
+    @cohort.destroy
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def all
+    @cohort = Cohort.all
+  end
+
   def edit
       @instructor = Instructor.all
   end

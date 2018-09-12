@@ -38,6 +38,17 @@ end
     @course = Course.where(user_id: current_user.id)
   end
 
+
+  def destroy
+    @course = Course.find(params[:id])
+    p "Deleting #{@course.name}"
+    @course.destroy
+    respond_to do |format|
+      format.js
+
+    end
+  end
+
   private
 
   def course_params

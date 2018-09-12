@@ -4,7 +4,7 @@
 <section class="all">
 <h1>All Postboy Students</h1>
 <% @student.each do |student| %>
-<p><%= link_to "#{student.full_name}", course_student_path(student.course_id, student.id) %></p>
+<p><%= link_to "#{student.full_name}", course_student_path(student.course_id, student.id) %> -- <%= link_to 'Delete Student', course_student_path(student.course_id, student.id), method: :delete, data: { confirm: 'Are you sure?', remote: true}, class: 'terminate' %></p>
 <% end %>
 <% end %>
 </section>
