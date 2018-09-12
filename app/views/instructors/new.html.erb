@@ -13,9 +13,10 @@
   <p><%= f.text_field :age, placeholder: 'Age'  %> </p>
   <p><%= f.text_field :salary, placeholder: 'Salary'  %> </p>
   <p><%= f.text_area :bio, placeholder: 'Write a quick bio' %>  </p>
-  <p>Accepted  <%= f.check_box :admin %></p>
+  <p>Admin  <%= f.check_box :accepted %></p>
+  <p>  Denied<%= f.check_box :denied %></p>
 
   <%= f.submit 'Register' %>
   <% end %>
-
+<% end %>
 </section>
